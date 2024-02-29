@@ -10,8 +10,8 @@ import {InvestScreen} from "../../features/invest/screens/invest.screen";
 import {IdeasScreen} from "../../features/ideas/screens/ideas.screen";
 
 const TAB_ICON = {
-    Home: ["home", "home-outline"],
-    Statement: ["analytics", "analytics-outline"],
+    Home: ["analytics", "analytics-outline"],
+    Statement: ["list", "list-outline"],
     Invest: ["add-circle", "add-circle-outline"],
     Ideas: ["bulb", "bulb-outline"],
     Settings: ["settings", "settings-outline"],
