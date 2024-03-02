@@ -1,12 +1,13 @@
 import { StatusBar } from 'react-native';
 import { Navigation } from "./src/infrastructure/navigation";
-import {SafeAreaView} from "react-native";
+import {AccountScreen} from "./src/features/account/screens/account.screen";
 
 export default function App() {
   return (
     <>
       <StatusBar style="auto" />
-      <Navigation />
+        <AccountScreen/>
+      {/*<Navigation />*/}
     </>
   );
 }
