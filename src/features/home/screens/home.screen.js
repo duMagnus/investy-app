@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, View, Text } from "react-native";
 import { LineChart } from "react-native-gifted-charts";
+import { BackgroundView } from "../../../infrastructure/navigation/index.styles";
 
 const investmentData = [
     { date: '2019-11', totalInvested: 0, growthInvested: 0 },
@@ -69,27 +70,27 @@ export const HomeScreen = () => {
     });
 
     return (
-        <View style={{backgroundColor: '#A1B2C3', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <View style={{ backgroundColor: '#1C1C1C', justifyContent: 'center', alignItems: 'center', width: '90%', paddingHorizontal: 20, paddingTop: 20, borderRadius: 10}}>
+        <BackgroundView>
+            <View style={{ backgroundColor: '#EAF4F4', justifyContent: 'center', alignItems: 'center', width: '90%', paddingRight: 20, paddingTop: 20, borderRadius: 10}}>
                 <LineChart
                     data={lineData}
                     data2={lineData2}
                     endSpacing={0}
                     initialSpacing={0}
+                    hideAxesAndRules
                     hideDataPoints
                     curved
                     spacing={(((windowWidth - 40) * 0.9 / lineData.length) * 0.87) }
                     areaChart
-                    color1="#8a56ce"
-                    color2="#56acce"
-                    startFillColor1="#8a56ce"
-                    startFillColor2="#56acce"
-                    endFillColor1="#8a56ce"
-                    endFillColor2="#56acce"
+                    color1="#6B9080"
+                    color2="#A4C3B2"
+                    startFillColor1="#6B9080"
+                    startFillColor2="#A4C3B2"
+                    endFillColor1="#6B9080"
+                    endFillColor2="#A4C3B2"
                     startOpacity={0.9}
                     endOpacity={0.2}
                     noOfSections={3}
-                    yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
@@ -126,7 +127,7 @@ export const HomeScreen = () => {
                     maxValue={Math.max(...lineData.map((value) => value.value), ...lineData2.map((value) => value.value))}
                 />
             </View>
-        </View>
+        </BackgroundView>
     );
 
 };

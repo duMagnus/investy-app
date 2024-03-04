@@ -8,6 +8,7 @@ import {SettingsScreen} from "../../features/settings/screens/settings.screen";
 import {StatementScreen} from "../../features/statement/screens/statement.screen";
 import {InvestScreen} from "../../features/invest/screens/invest.screen";
 import {IdeasScreen} from "../../features/ideas/screens/ideas.screen";
+import {StatementNavigator} from "./statement.navigator";
 
 const TAB_ICON = {
     Home: ["analytics", "analytics-outline"],
@@ -26,8 +27,8 @@ const createScreenOptions = ({ route }) => {
         tabBarStyle: styles.bottomTab,
         tabBarShowLabel: false,
         headerShown: false,
-        tabBarActiveTintColor: "#FFF",
-        tabBarInactiveTintColor: "#778DA9",
+        tabBarActiveTintColor: "#6B9080",
+        tabBarInactiveTintColor: "#A4C3B2",
     };
 };
 
@@ -38,7 +39,7 @@ export const Navigation = () => {
         <NavigationContainer>
             <Tab.Navigator screenOptions={createScreenOptions}>
                 <Tab.Screen name="Home" component={HomeScreen}/>
-                <Tab.Screen name="Statement" component={StatementScreen}/>
+                <Tab.Screen name="Statement" component={StatementNavigator}/>
                 <Tab.Screen name="Invest" component={InvestScreen}/>
                 <Tab.Screen name="Ideas" component={IdeasScreen}/>
                 <Tab.Screen name="Settings" component={SettingsScreen}/>
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         bottom: 0,
         height: 60,
-        backgroundColor: "#a1b2c3",
+        backgroundColor: "#F6FFF8",
         borderTopWidth: 0,
     },
 });
