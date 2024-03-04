@@ -1,6 +1,7 @@
 import { StatusBar } from 'react-native';
 import { Navigation } from "./src/infrastructure/navigation";
 import { useFonts } from "expo-font";
+import {AccountScreen} from "./src/features/account/screens/account.screen";
 
 export default function App() {
 
@@ -19,7 +20,8 @@ export default function App() {
     return (
         <>
             <StatusBar style="auto" />
-            <Navigation />
+            <AccountScreen/>
+            {/*<Navigation />*/}
         </>
     );
 }
