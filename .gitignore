@@ -36,3 +36,4 @@ yarn-error.*
 
 #added manually
 .idea
+.env
