@@ -4,6 +4,10 @@ import { useFonts } from "expo-font";
 import {AccountScreen} from "./src/features/account/screens/account.screen";
 import * as SplashScreen from 'expo-splash-screen';
 import {useCallback, useEffect} from "react";
+import {
+    AuthenticationContext,
+    AuthenticationContextProvider
+} from "./src/services/authentication/authentication.context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,8 +38,10 @@ export default function App() {
     return (
         <>
             <StatusBar style="auto" />
-            <AccountScreen/>
-            {/*<Navigation />*/}
+            {/*<AccountScreen/>*/}
+            <AuthenticationContextProvider>
+                <Navigation />
+            </AuthenticationContextProvider>
         </>
     );
 }
