@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import {createContext, useEffect, useState} from "react";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
+    onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../../FirebaseConfig";
 
@@ -12,6 +13,14 @@ export const AuthenticationContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (u) => {
+            if (u) {
+                setUser(u);
+            }
+        });
+    }, []);
 
     const onSignUp = (email, password) => {
         setIsLoading(true);
@@ -54,6 +63,7 @@ export const AuthenticationContextProvider = ({ children }) => {
                 setIsLoading(false);
             });
     };
+
     return (
         <AuthenticationContext.Provider
             value={{ user, error, isLoading, onSignUp, onSignIn, onSignOut }}
