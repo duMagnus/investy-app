@@ -2,10 +2,14 @@ import { StatusBar } from 'react-native';
 import { Navigation } from "./src/infrastructure/navigation";
 import { useFonts } from "expo-font";
 import {AccountScreen} from "./src/features/account/screens/account.screen";
+import * as SplashScreen from 'expo-splash-screen';
+import {useCallback, useEffect} from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 
-    const [fontsLoaded] = useFonts({
+    const [fontsLoaded, fontError] = useFonts({
         "Montserrat-Black": require("./assets/fonts/Montserrat-Black.ttf"),
         "Montserrat-Bold": require("./assets/fonts/Montserrat-Bold.ttf"),
         "Montserrat-ExtraBold": require("./assets/fonts/Montserrat-ExtraBold.ttf"),
@@ -16,6 +20,16 @@ export default function App() {
         "Montserrat-SemiBold": require("./assets/fonts/Montserrat-SemiBold.ttf"),
         "Montserrat-Thin": require("./assets/fonts/Montserrat-Thin.ttf"),
     });
+
+    useEffect(() => {
+        if (fontsLoaded || fontError) {
+            SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded, fontError]);
+
+    if (!fontsLoaded && !fontError) {
+        return null;
+    }
 
     return (
         <>
