@@ -91,6 +91,10 @@ const assets = [
 
 export const StatementScreen = ({ navigation }) => {
 
+    const navigateToAddAssetScreen = () => {
+        navigation.navigate('AddAssetScreen');
+    }
+
     const navigateToFilterScreen = () => {
         navigation.navigate('FilterScreen');
     }
@@ -101,7 +105,7 @@ export const StatementScreen = ({ navigation }) => {
 
     return (
         <BackgroundView>
-            <AssetsHeader goToFilterScreen={navigateToFilterScreen}/>
+            <AssetsHeader goToFilterScreen={navigateToFilterScreen} goToAddAssetScreen={navigateToAddAssetScreen}/>
             <AssetsBar assets={assets}/>
             <FlatList
                 data={assets}

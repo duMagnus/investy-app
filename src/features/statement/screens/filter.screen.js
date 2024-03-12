@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {BackgroundView} from "../../../infrastructure/navigation/index.styles";
-import {FilterOption, FilterOptionTitle, FilterTitle} from "./statement.styles";
+import {FilterOption, FilterOptionTitle, ScreenTitle} from "./statement.styles";
 import {Ionicons} from "@expo/vector-icons";
 import {useState} from "react";
 
@@ -10,7 +10,7 @@ export const FilterScreen = () => {
 
     return (
         <BackgroundView>
-            <FilterTitle>FILTRAR ATIVOS</FilterTitle>
+            <ScreenTitle>FILTRAR ATIVOS</ScreenTitle>
             <FilterOption onPress={() => {setOpenType(!openType)}}>
                 <FilterOptionTitle>Tipo de ativo</FilterOptionTitle>
                 <Ionicons name="chevron-down" size={26} color="#6B9080"/>

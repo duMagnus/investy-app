@@ -50,7 +50,7 @@ export const AssetsHeaderContainer = styled.View`
   justify-content: space-between;
 `;
 
-export const AssetsHeaderTitle = styled.Text`
+export const ScreenTitle = styled.Text`
   font-size: 20px;
   font-family: Montserrat-SemiBold;
   color: #6B9080;
@@ -70,13 +70,6 @@ export const AssetCardDetailContainer = styled.View`
 
 //FilterScreen
 
-export const FilterTitle = styled.Text`
-  font-size: 20px;
-  font-family: Montserrat-SemiBold;
-  color: #6B9080;
-  margin-bottom: 20px;
-`;
-
 export const FilterOption = styled(TouchableOpacity)`
   width: 100%;
   //background: coral;
@@ -93,3 +86,4 @@ export const FilterOptionTitle = styled.Text`
   color: #6B9080;
 `;
 
+//AddAssetScreen
